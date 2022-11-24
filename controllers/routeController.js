@@ -5,7 +5,6 @@ require("dotenv").config();
 
 let async = require("async");
 let { body, validationResult } = require("express-validator");
-const { findByIdAndRemove } = require("../models/user");
 
 exports.sign_up_get = function (req, res, next) {
   res.render("sign-up", { title: "Sign-up Form", msg: " " });
@@ -45,7 +44,6 @@ exports.sign_up_post = [
         res.render("sign-up", { title: "Sign-Up", msg: "Username taken" });
         return;
       } else {
-        //username not exist,save the user
         user.save(function (err) {
           if (err) {
             next(err);
