@@ -58,7 +58,7 @@ exports.sign_up_post = [
 ];
 
 exports.login_get = function (req, res, next) {
-  res.render("log_in", { title: "Log-In" });
+  res.render("log_in", { title: "Login" });
 };
 
 exports.login_post = passport.authenticate("local", {
